@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="3" total="4" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="20976" started-at="2022-12-10T14:20:42 EST" finished-at="2022-12-10T14:21:03 EST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="20976" started-at="2022-12-10T14:20:42 EST" finished-at="2022-12-10T14:21:03 EST">
+      <class name="test.Get_APITest">
+        <test-method status="PASS" signature="getCallListValidation()[pri:0, instance:test.Get_APITest@69a3d1d]" name="getCallListValidation" duration-ms="20934" started-at="2022-12-10T14:20:42 EST" finished-at="2022-12-10T14:21:03 EST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getCallListValidation -->
+      </class> <!-- test.Get_APITest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
