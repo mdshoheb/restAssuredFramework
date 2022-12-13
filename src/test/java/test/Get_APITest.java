@@ -45,7 +45,7 @@ public class Get_APITest {
 		.body("data.last_name", equalTo("Weaver"));
 	}
 	
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void getCallListValidation() {
 		String response =
 		RestAssured
@@ -62,7 +62,63 @@ public class Get_APITest {
 		}
 	}
 	
+	@Test(enabled = false)
+	public void getCallComplexListValidationJsonPath() {
+		String response =
+		RestAssured
+		.given()
+		.param("page", "2")
+		.log().all()
+		.get("https://reqres.in/api/users")
+		.then()
+		.extract().response().asPrettyString();
+		JsonPath path = JsonPath.from(response);
+		
+		List<Integer> list = path.getList("data.id");
+		for(int name : list) {
+			System.out.println(name);
+		}
+	}
+	
+	@Test(enabled = false)
+	public void getCallComplexListValidationJsonPath01() {
+		String resposne = 
+		RestAssured
+		.given()
+		.param("page", "2")
+		.log().all()
+		.get("https://reqres.in/api/users")
+		.then()
+		.extract().response().asString();	
+		JsonPath path = JsonPath.from(resposne);
+		List<String> list = path.getList("data.first_name");
+		for(String name : list) {
+			System.out.println(name);
+		}
+	}
+	
+	@Test(enabled = true)
+	public void getCallComplexListValidationJsonPath02() {
+		String response = 
+		RestAssured
+		.given()
+		.param("page", "2").
+		log().all()
+		.get("https://reqres.in/api/users").
+		then()
+		.extract().response().asString();		
+		JsonPath path = JsonPath.from(response);
+		List<String> list = path.getList("data.email");
+		for(String name : list) {
+			System.out.println(name);
+		}
+		
+	}
+	
+	
 }
+		
+		
 		
 
 		
